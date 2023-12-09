@@ -43,8 +43,6 @@ export default [
           },
         },
         plugins: [require("tailwindcss"), require("autoprefixer")],
-        inject: true, // Injects the CSS into the JavaScript bundle
-        extract: true, // Set to true if you want to extract CSS to a separate file
       }),
     ],
   },

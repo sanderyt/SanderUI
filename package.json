@@ -1,6 +1,6 @@
 {
   "name": "sanderui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UI Library in React",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
