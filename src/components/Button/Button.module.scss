@@ -1,7 +1,7 @@
 .btn {
-  @apply border-0 text-white bg-indigo-500 px-4 py-2 font-bold rounded cursor-pointer transition;
+  @apply border-0 text-white bg-teal-500 px-4 py-2 font-bold rounded cursor-pointer transition;
 
   &:hover {
-    @apply bg-indigo-600;
+    @apply bg-teal-600;
   }
 }

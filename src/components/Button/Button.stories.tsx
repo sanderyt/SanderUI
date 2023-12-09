@@ -15,18 +15,21 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: "Primary 😃",
+    children: "Click me",
+    onClick: () => {
+      alert("This is working");
+    },
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: "Secondary",
+    children: "Click me",
   },
 };
 
 export const CTA: Story = {
   args: {
-    children: "Buy now 😃",
+    children: "Click me",
   },
 };
