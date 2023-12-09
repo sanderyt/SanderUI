@@ -24,15 +24,17 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     terser(),
-    scss({
-      output: "dist/bundle.css",
-    }),
     postcss({
-      extensions: [".scss", ".css"],
-      use: [["sass", { includePaths: ["./src/styles"] }]],
+      extensions: [".scss"],
+      use: {
+        sass: {},
+        scss: {
+          includePaths: ["./node_modules"],
+        },
+      },
       plugins: [require("tailwindcss"), require("autoprefixer")],
-      extract: "dist/style.css",
-      minimize: true,
+      inject: true, // Injects the CSS into the JavaScript bundle
+      extract: true, // Set to true if you want to extract CSS to a separate file
     }),
   ],
 };
