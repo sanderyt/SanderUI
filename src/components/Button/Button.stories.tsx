@@ -1,13 +1,32 @@
-import React from "react";
 import Button from "./index";
+import type { Meta, StoryObj } from "@storybook/react";
 
-export default {
-  title: "Button",
+const meta: Meta<typeof Button> = {
+  title: "Components/Button",
   component: Button,
+  argTypes: {
+    children: { control: "text" },
+  },
 };
 
-export const Primary = () => <Button>Primary</Button>;
+export default meta;
 
-export const Secondary = () => <Button>Secondary</Button>;
+type Story = StoryObj<typeof Button>;
 
-export const Tertiary = () => <Button>Tertiary</Button>;
+export const Primary: Story = {
+  args: {
+    children: "Primary 😃",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: "Secondary",
+  },
+};
+
+export const CTA: Story = {
+  args: {
+    children: "Buy now 😃",
+  },
+};

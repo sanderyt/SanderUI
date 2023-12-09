@@ -1,9 +1,20 @@
-import React from "react";
 import Card from "./index";
+import type { Meta, StoryObj } from "@storybook/react";
 
-export default {
-  title: "Card",
+const meta: Meta<typeof Card> = {
+  title: "Components/Card",
   component: Card,
+  argTypes: {
+    children: { control: "text" },
+  },
 };
 
-export const Default = () => <Card>This is a card component</Card>;
+export default meta;
+
+type Story = StoryObj<typeof Card>;
+
+export const Default: Story = {
+  args: {
+    children: "This is a card component",
+  },
+};

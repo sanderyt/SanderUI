@@ -1,14 +1,15 @@
 {
   "name": "sanderui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
+  "version": "1.0.1",
+  "description": "UI Library in React",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "publish": "rollup -c"
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "Sander van Rijsoort",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@storybook/addon-essentials": "^7.6.4",
     "@storybook/addon-interactions": "^7.6.4",
     "@storybook/addon-links": "^7.6.4",
@@ -36,6 +38,7 @@
     "@types/react-dom": "^18.2.17",
     "postcss-loader": "^7.3.3",
     "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",

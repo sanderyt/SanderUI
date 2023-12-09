@@ -2,39 +2,56 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import { terser } from "rollup-plugin-terser";
-import scss from "rollup-plugin-scss";
+import terser from "@rollup/plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import dts from "rollup-plugin-dts";
 
-export default {
-  input: "src/index.ts", // Entry point
-  output: [
-    {
-      file: "dist/bundle.cjs.js", // CommonJS bundle
-      format: "cjs",
-    },
-    {
-      file: "dist/bundle.esm.js", // ES Module bundle
-      format: "esm",
-    },
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
-    terser(),
-    postcss({
-      extensions: [".scss"],
-      use: {
-        sass: {},
-        scss: {
-          includePaths: ["./node_modules"],
-        },
+// This is required to read package.json file when
+// using Native ES modules in Node.js
+// https://rollupjs.org/command-line-interface/#importing-package-json
+import { createRequire } from "node:module";
+const requireFile = createRequire(import.meta.url);
+const packageJson = requireFile("./package.json");
+
+export default [
+  {
+    input: "src/index.ts", // Entry point
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
       },
-      plugins: [require("tailwindcss"), require("autoprefixer")],
-      inject: true, // Injects the CSS into the JavaScript bundle
-      extract: true, // Set to true if you want to extract CSS to a separate file
-    }),
-  ],
-};
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      typescript({ useTsconfigDeclarationDir: true }),
+      terser(),
+      postcss({
+        extensions: [".scss"],
+        use: {
+          sass: {},
+          scss: {
+            includePaths: ["./node_modules"],
+          },
+        },
+        plugins: [require("tailwindcss"), require("autoprefixer")],
+        inject: true, // Injects the CSS into the JavaScript bundle
+        extract: true, // Set to true if you want to extract CSS to a separate file
+      }),
+    ],
+  },
+  {
+    input: "lib/index.d.ts",
+    output: [{ file: "lib/index.d.ts", format: "es" }],
+    plugins: [dts()],
+    external: [/\.css$/],
+  },
+];
