@@ -12,6 +12,7 @@ const Button: FC<Props> = ({
   children,
   className,
   onClick,
+  size = "md",
   variant = "primary",
 }) => {
   return (
@@ -19,6 +20,12 @@ const Button: FC<Props> = ({
       className={`${cx("button", {
         isPrimary: variant === "primary",
         isSecondary: variant === "secondary",
+        isSecondaryGray: variant === "secondary-gray",
+        isSm: size === "sm",
+        isMd: size === "md",
+        isLg: size === "lg",
+        isXl: size === "xl",
+        is2Xl: size === "2xl",
       })} ${className}`}
       onClick={onClick}
     >

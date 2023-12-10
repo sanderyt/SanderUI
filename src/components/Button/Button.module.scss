@@ -1,5 +1,9 @@
 .button {
-  @apply border-0 text-white px-4 py-2.5 rounded-lg cursor-pointer transition font-inter text-sm font-semibold leading-5;
+  @apply border-0 text-white rounded-lg cursor-pointer transition font-inter font-semibold leading-5;
+
+  //
+  // VARIANTS
+  //
 
   //
   // Primary variant
@@ -11,8 +15,9 @@
       @apply bg-primary-700;
     }
 
-    &:focus {
-      @apply shadow-xs-focused;
+    &:focus,
+    :active {
+      @apply shadow-xs-focused-primary-400;
     }
   }
 
@@ -26,8 +31,64 @@
       @apply bg-primary-100;
     }
 
-    &:focus {
-      @apply shadow-xs-focused;
+    &:focus,
+    :active {
+      @apply shadow-xs-focused-primary-400;
     }
+  }
+
+  //
+  // Secondary gray variant
+  //
+  &.isSecondaryGray {
+    @apply bg-white text-gray-700 border border-gray-300 shadow-xs;
+
+    &:hover {
+      @apply bg-gray-50;
+    }
+
+    &:focus,
+    :active {
+      @apply shadow-xs-focused-gray-100;
+    }
+  }
+
+  //
+  // SIZES
+  //
+
+  //
+  // Size sm
+  //
+  &.isSm {
+    @apply text-sm px-3.5 py-2;
+  }
+
+  //
+  // Size md
+  //
+  &.isMd {
+    @apply text-sm px-4 py-2.5;
+  }
+
+  //
+  // Size lg
+  //
+  &.isLg {
+    @apply text-base px-[18px] py-2.5;
+  }
+
+  //
+  // Size xl
+  //
+  &.isXl {
+    @apply text-base px-5 py-3;
+  }
+
+  //
+  // Size 2xl
+  //
+  &.is2Xl {
+    @apply text-lg px-7 py-4;
   }
 }

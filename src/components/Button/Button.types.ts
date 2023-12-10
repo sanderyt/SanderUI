@@ -19,7 +19,7 @@ export interface Props {
    * the following values: "primary", "secondary", or "tertiary". The specific styling
    * for each variant is typically defined in the component's CSS or styles.
    */
-  variant: "primary" | "secondary" | "tertiary";
+  variant: "primary" | "secondary" | "secondary-gray";
 
   /**
    * `className` allows you to specify additional CSS classes to be applied to the component.
@@ -27,4 +27,6 @@ export interface Props {
    * It is an optional property, so you can omit it if no additional classes are needed.
    */
   className?: string;
+
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }

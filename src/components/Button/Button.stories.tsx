@@ -17,6 +17,7 @@ export const Primary: Story = {
   args: {
     children: "Button CTA",
     variant: "primary",
+    size: "md",
     onClick: () => {
       alert("This is working!");
     },
@@ -27,8 +28,20 @@ export const Secondary: Story = {
   args: {
     children: "Button CTA",
     variant: "secondary",
+    size: "md",
     onClick: () => {
       alert("This is working!");
     },
+  },
+};
+
+export const Outlined: Story = {
+  args: {
+    children: "Button CTA",
+    variant: "secondary-gray",
+    onClick: () => {
+      alert("This is working!");
+    },
+    size: "md",
   },
 };
