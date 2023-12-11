@@ -12,14 +12,14 @@ export interface Props {
    * `onClick` is a function that will be called when the user clicks on the element.
    * This property is typically used to handle click events in interactive components.
    */
-  onClick: () => void;
+  onClick?: () => void;
 
   /**
    * `variant` determines the visual style or type of the component. It can have one of
    * the following values: "primary", "secondary", or "tertiary". The specific styling
    * for each variant is typically defined in the component's CSS or styles.
    */
-  variant: "primary" | "secondary" | "secondary-gray";
+  variant?: "primary" | "secondary" | "secondary-gray";
 
   /**
    * `className` allows you to specify additional CSS classes to be applied to the component.
@@ -28,5 +28,12 @@ export interface Props {
    */
   className?: string;
 
+  /**
+   * `size` determines the size or dimensions of the component. It can have one of the
+   * following values: "sm" (small), "md" (medium), "lg" (large), "xl" (extra large),
+   * or "2xl" (double extra large). The specific size-related styling for each value
+   * is typically defined in the component's CSS or styles.
+   * It is an optional property, so you can omit it if the default size is suitable.
+   */
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }

@@ -9,10 +9,10 @@
   // Primary variant
   //
   &.isPrimary {
-    @apply bg-primary-600;
+    @apply bg-indigo-600;
 
     &:hover {
-      @apply bg-primary-700;
+      @apply bg-indigo-700;
     }
 
     &:focus,
@@ -25,10 +25,10 @@
   // Secondary variant
   //
   &.isSecondary {
-    @apply bg-primary-50 text-primary-700;
+    @apply bg-indigo-50 text-indigo-700;
 
     &:hover {
-      @apply bg-primary-100;
+      @apply bg-indigo-100;
     }
 
     &:focus,
