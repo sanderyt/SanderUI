@@ -45,3 +45,14 @@ export const Outlined: Story = {
     size: "md",
   },
 };
+
+export const Danger: Story = {
+  args: {
+    children: "Button CTA",
+    variant: "danger",
+    onClick: () => {
+      alert("This is working!");
+    },
+    size: "md",
+  },
+};

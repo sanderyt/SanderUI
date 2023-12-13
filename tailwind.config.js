@@ -29,13 +29,19 @@ module.exports = {
           800: "#846358",
           900: "#43302b",
         },
+        error: {
+          600: "#D92D20",
+          700: "#B42318",
+        },
       },
       boxShadow: {
-        "xs-focused-primary-400":
+        ["xs-focused-error-100"]:
+          "0px 0px 0px 4px #FEE4E2, 0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        ["xs-focused-primary-400"]:
           "0px 0px 0px 4px #F4EBFF, 0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
-        xs: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
-        "xs-focused-gray-100":
-          "0px 0px 0px 4px #F2F4F7, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);",
+        ["xs"]: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        ["xs-focused-gray-100"]:
+          "0px 0px 0px 4px #F2F4F7, 0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
       },
     },
   },

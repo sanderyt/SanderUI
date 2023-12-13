@@ -21,6 +21,7 @@ const Button: FC<Props> = ({
         isPrimary: variant === "primary",
         isSecondary: variant === "secondary",
         isSecondaryGray: variant === "secondary-gray",
+        isDanger: variant === "danger",
         isSm: size === "sm",
         isMd: size === "md",
         isLg: size === "lg",

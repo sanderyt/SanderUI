@@ -1,5 +1,5 @@
 .button {
-  @apply border-0 text-white rounded-lg cursor-pointer transition font-inter font-semibold leading-5;
+  @apply border-0 text-white rounded-lg cursor-pointer transition font-inter font-semibold leading-5 outline-none;
 
   //
   // VARIANTS
@@ -50,6 +50,22 @@
     &:focus,
     :active {
       @apply shadow-xs-focused-gray-100;
+    }
+  }
+
+  //
+  // Danger variant
+  //
+  &.isDanger {
+    @apply bg-error-600 text-white;
+
+    &:hover {
+      @apply bg-error-700;
+    }
+
+    &:focus,
+    :active {
+      @apply shadow-xs-focused-error-100;
     }
   }
 
