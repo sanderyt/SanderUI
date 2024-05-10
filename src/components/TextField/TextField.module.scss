@@ -1,0 +1,28 @@
+.container {
+  @apply flex flex-col w-full relative;
+}
+
+.label {
+  @apply flex flex-col font-bold text-sm text-gray-400 pt-2;
+}
+
+.textField {
+  @apply outline-none px-3 py-2 text-base mt-2 text-black bg-white border border-[#d0d5dd] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] rounded-lg transition;
+
+  &:focus {
+    @apply border-[#6465f1] shadow-[0px_1px_2px_rgba(16,24,40,0.05),0px_0px_0px_4px_rgba(100,101,241,0.18)] rounded-lg;
+  }
+}
+
+.textFieldError {
+  @apply border-[#fda29b] shadow-[0px_1px_2px_rgba(16,24,40,0.05),0px_0px_0px_4px_rgba(254,228,226,1)] rounded-lg;
+}
+
+.error {
+  @apply text-red-400 text-xs mt-1 h-4;
+}
+
+.iconRight {
+  @apply absolute right-2;
+  top: 11.25rem;
+}

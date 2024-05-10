@@ -36,4 +36,8 @@ export interface Props {
    * It is an optional property, so you can omit it if the default size is suitable.
    */
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
+
+  isLoading?: boolean;
+
+  type?: "button" | "submit" | "reset";
 }

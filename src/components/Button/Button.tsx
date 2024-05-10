@@ -1,6 +1,8 @@
 import classNames from "classnames/bind";
 import React from "react";
 
+import LoadingSpinner from "./Spinner";
+
 import type { FC } from "react";
 import type { Props } from "./Button.types";
 
@@ -14,6 +16,9 @@ const Button: FC<Props> = ({
   onClick,
   size = "md",
   variant = "primary",
+  isLoading,
+  type,
+  ...props
 }) => {
   return (
     <button
@@ -29,8 +34,10 @@ const Button: FC<Props> = ({
         is2Xl: size === "2xl",
       })} ${className}`}
       onClick={onClick}
+      type={type}
+      {...props}
     >
-      {children}
+      {isLoading ? <LoadingSpinner /> : children}
     </button>
   );
 };
