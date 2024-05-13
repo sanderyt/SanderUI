@@ -23,6 +23,7 @@ const TextField: FC<TextFieldProps> = ({
           type={type}
           className={cx("textField", { textFieldError: error })}
           onChange={onChange}
+          name={name}
           {...props}
         />
       </label>
