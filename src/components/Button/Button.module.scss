@@ -1,5 +1,5 @@
 .button {
-  @apply border-0 text-white rounded-lg cursor-pointer transition font-inter font-semibold leading-5 outline-none;
+  @apply border-0 text-white rounded-lg cursor-pointer transition font-inter font-semibold leading-5 outline-none flex items-center justify-center;
 
   //
   // VARIANTS
@@ -85,6 +85,8 @@
   //
   &.isMd {
     @apply text-sm px-4 py-2.5;
+
+    min-width: 100px;
   }
 
   //

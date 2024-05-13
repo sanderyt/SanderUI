@@ -3,11 +3,11 @@
 }
 
 .label {
-  @apply flex flex-col font-bold text-sm text-gray-400 pt-2;
+  @apply flex flex-col font-bold text-sm text-gray-400 font-inter;
 }
 
 .textField {
-  @apply outline-none px-3 py-2 text-base mt-2 text-black bg-white border border-[#d0d5dd] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] rounded-lg transition;
+  @apply outline-none px-3 py-2 text-base mt-1 text-black bg-white border border-[#d0d5dd] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] rounded-lg transition;
 
   &:focus {
     @apply border-[#6465f1] shadow-[0px_1px_2px_rgba(16,24,40,0.05),0px_0px_0px_4px_rgba(100,101,241,0.18)] rounded-lg;

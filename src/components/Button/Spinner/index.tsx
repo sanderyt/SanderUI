@@ -5,14 +5,7 @@ import type { FC } from "react";
 import styles from "./LoadingSpinner.module.scss";
 
 const LoadingSpinner: FC = () => {
-  return (
-    <div className={styles.ldsEllipsis}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
+  return <span className={styles.loader}></span>;
 };
 
 export default LoadingSpinner;
