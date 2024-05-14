@@ -40,4 +40,8 @@ export interface Props {
   isLoading?: boolean;
 
   type?: "button" | "submit" | "reset";
+
+  leftIcon?: ReactNode;
+
+  rightIcon?: ReactNode;
 }

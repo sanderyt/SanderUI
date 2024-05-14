@@ -18,6 +18,8 @@ const Button: FC<Props> = ({
   variant = "primary",
   isLoading,
   type,
+  leftIcon,
+  rightIcon,
   ...props
 }) => {
   return (
@@ -37,7 +39,9 @@ const Button: FC<Props> = ({
       type={type}
       {...props}
     >
+      {leftIcon && <span className="mr-1">{leftIcon}</span>}
       {isLoading ? <LoadingSpinner /> : children}
+      {rightIcon && <span className="ml-1">{rightIcon}</span>}
     </button>
   );
 };

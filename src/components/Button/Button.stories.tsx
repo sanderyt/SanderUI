@@ -1,4 +1,7 @@
+import { FaHeart, FaRegTrashAlt } from "react-icons/fa";
 import Button from "./index";
+import React from "react";
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Button> = {
@@ -58,5 +61,31 @@ export const Danger: Story = {
       alert("This is working!");
     },
     size: "md",
+  },
+};
+
+export const ButtonWithLeftIcon: Story = {
+  args: {
+    children: "Delete",
+    variant: "danger",
+    isLoading: false,
+    onClick: () => {
+      alert("This is working!");
+    },
+    size: "md",
+    leftIcon: <FaRegTrashAlt />,
+  },
+};
+
+export const ButtonWithRightIcon: Story = {
+  args: {
+    children: "Like",
+    variant: "primary",
+    isLoading: false,
+    onClick: () => {
+      alert("This is working!");
+    },
+    size: "md",
+    rightIcon: <FaHeart />,
   },
 };
